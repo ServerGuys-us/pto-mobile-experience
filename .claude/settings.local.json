@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/sgadmin/.claude/projects/c--Users-sgadmin-Project-PTO-pto-mobile-experience/**)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\sgadmin\\.claude\\projects\\c--Users-sgadmin-Project-PTO-pto-mobile-experience"
+    ]
+  }
+}

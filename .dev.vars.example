@@ -1,0 +1,21 @@
+# ============================================================
+# PTO Mobile Experience — Local Development Environment Vars
+# ============================================================
+# 1. Copy this file to .dev.vars  (cp .dev.vars.example .dev.vars)
+# 2. Fill in your real values
+# 3. NEVER commit .dev.vars — it's in .gitignore
+# ============================================================
+
+# ── n8n Webhook ─────────────────────────────────────────────
+# Create a Webhook trigger node in n8n at serverguys.us
+# Copy the webhook URL and paste it here
+N8N_WEBHOOK_URL=https://serverguys.us/webhook/REPLACE_WITH_YOUR_WEBHOOK_ID
+
+# ── Stripe ──────────────────────────────────────────────────
+# From Stripe Dashboard → Developers → API Keys
+# Use sk_test_... for testing, sk_live_... for production
+STRIPE_SECRET_KEY=sk_test_REPLACE_WITH_YOUR_STRIPE_KEY
+
+# ── Site URL ─────────────────────────────────────────────────
+# Used for Stripe success/cancel redirect URLs
+SITE_URL=http://localhost:8788

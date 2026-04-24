@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get a Free Quote | PTO Mobile Experience</title>
+  <meta name="description" content="Request a free party bus quote from PTO Mobile Experience. Tell us your event details and we'll respond within 2 hours with a custom price. No commitment required.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎉</text></svg>">
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo"><div class="nav-logo-icon">🎉</div><div class="nav-logo-text"><span class="nav-logo-name">PTO Mobile</span><span class="nav-logo-sub">Experience</span></div></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/buses/">Our Fleet</a></li>
+        <li><a href="/pricing.html">Pricing</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/quote.html" class="active">Get a Quote</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="tel:+15551234567" class="btn btn-outline btn-sm">📞 (555) 123-4567</a>
+        <a href="/quote.html" class="btn btn-primary btn-sm">Book Now →</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle mobile menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="nav-mobile" id="navMobile">
+  <a href="/">🏠 Home</a>
+  <a href="/buses/">🚌 Our Fleet</a>
+  <a href="/buses/maverick.html" class="sub-link">↳ The Maverick (20 guests)</a>
+  <a href="/buses/royale.html" class="sub-link">↳ The Royale (35 guests)</a>
+  <a href="/buses/empire.html" class="sub-link">↳ The Empire (50 guests)</a>
+  <a href="/pricing.html">💎 Pricing & Packages</a>
+  <a href="/about.html">ℹ️ About Us</a>
+  <a href="/quote.html" class="active">📋 Get a Quote</a>
+  <div class="nav-mobile-cta">
+    <a href="tel:+15551234567" class="btn btn-outline">📞 Call (555) 123-4567</a>
+    <a href="/quote.html" class="btn btn-primary">Get Your Free Quote →</a>
+  </div>
+</div>
+
+<!-- Page Hero -->
+<section class="page-hero" style="padding-bottom:clamp(40px,5vw,60px);">
+  <div class="page-hero-bg"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="breadcrumb"><a href="/">Home</a><span>/</span><span style="color:var(--c-gold)">Get a Quote</span></div>
+      <div class="section-tag" style="display:inline-flex;margin-inline:auto;">⚡ Free · No Commitment</div>
+      <h1 class="h1" style="margin-top:14px;">Request Your <span class="text-gold">Free Quote</span></h1>
+      <div class="section-divider"></div>
+      <p class="lead" style="max-width:500px;margin-inline:auto;margin-top:12px;">Fill out the form below and we'll send your custom quote within 2 hours. No spam, no pressure — just great service.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Quote Form -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="quote-wrapper">
+
+      <!-- Form -->
+      <div>
+        <div class="quote-form-card anim-on-scroll">
+
+          <!-- Success state -->
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon">✓</div>
+            <h3 class="h3" style="margin-bottom:12px;">Quote Request <span class="text-gold">Received!</span></h3>
+            <p style="color:var(--c-muted);line-height:1.75;margin-bottom:24px;">
+              We've received your request and will send your custom quote within <strong style="color:var(--c-white);">2 hours</strong>. Check your email (and spam folder just in case).
+            </p>
+            <p style="color:var(--c-muted);font-size:0.88rem;">Need it faster? Call us at <a href="tel:+15551234567" style="color:var(--c-gold);">(555) 123-4567</a></p>
+            <div style="margin-top:28px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+              <a href="/" class="btn btn-outline">Back to Home</a>
+              <a href="/buses/" class="btn btn-primary">Explore Our Fleet →</a>
+            </div>
+          </div>
+
+          <!-- Form itself -->
+          <form id="quoteForm" novalidate>
+            <!-- Section 1: Contact Info -->
+            <div class="form-section-title">Your Contact Information</div>
+            <div class="form-grid form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="q_name">Full Name <span class="req">*</span></label>
+                <input type="text" id="q_name" name="name" class="form-control" placeholder="Your full name" required autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="q_phone">Phone Number <span class="req">*</span></label>
+                <input type="tel" id="q_phone" name="phone" class="form-control" placeholder="(555) 000-0000" required autocomplete="tel">
+              </div>
+            </div>
+            <div class="form-group" style="margin-top:18px;">
+              <label class="form-label" for="q_email">Email Address <span class="req">*</span></label>
+              <input type="email" id="q_email" name="email" class="form-control" placeholder="your@email.com" required autocomplete="email">
+            </div>
+
+            <!-- Section 2: Event Details -->
+            <div class="form-section-title">Event Details</div>
+            <div class="form-grid form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="q_event_type">Event Type <span class="req">*</span></label>
+                <select id="q_event_type" name="event_type" class="form-control" required>
+                  <option value="">Select your event…</option>
+                  <option>🎂 Birthday Party</option>
+                  <option>💍 Bachelorette Party</option>
+                  <option>🤵 Bachelor Party</option>
+                  <option>🎓 Prom / Homecoming</option>
+                  <option>💒 Wedding Transportation</option>
+                  <option>🏢 Corporate Event</option>
+                  <option>🎵 Concert / Nightlife</option>
+                  <option>🏈 Sporting Event</option>
+                  <option>🌟 Other Celebration</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="q_date">Event Date <span class="req">*</span></label>
+                <input type="date" id="q_date" name="event_date" class="form-control" required>
+              </div>
+            </div>
+            <div class="form-grid form-grid-2" style="margin-top:18px;">
+              <div class="form-group">
+                <label class="form-label" for="q_start">Approximate Start Time <span class="req">*</span></label>
+                <input type="time" id="q_start" name="start_time" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="q_end">Approximate End Time</label>
+                <input type="time" id="q_end" name="end_time" class="form-control">
+                <div class="form-hint">Estimate is fine — we'll discuss details</div>
+              </div>
+            </div>
+
+            <!-- Section 3: Vehicle & Group -->
+            <div class="form-section-title">Group & Vehicle</div>
+            <div class="form-grid form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="q_guests">Number of Guests <span class="req">*</span></label>
+                <select id="q_guests" name="guests" class="form-control" required>
+                  <option value="">How many guests?</option>
+                  <option>1–10 guests</option>
+                  <option>11–15 guests</option>
+                  <option>16–20 guests</option>
+                  <option>21–25 guests</option>
+                  <option>26–35 guests</option>
+                  <option>36–50 guests</option>
+                  <option>50+ guests (multiple buses)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="q_bus">Preferred Vehicle</label>
+                <select id="q_bus" name="bus" class="form-control">
+                  <option value="">Not sure — help me choose</option>
+                  <option value="maverick">The Maverick (up to 20) — $150/hr</option>
+                  <option value="royale">The Royale (up to 35) — $200/hr ⭐</option>
+                  <option value="empire">The Empire (up to 50) — $275/hr</option>
+                </select>
+                <div class="form-hint"><a href="/buses/" style="color:var(--c-gold);">Compare our vehicles →</a></div>
+              </div>
+            </div>
+            <div class="form-group" style="margin-top:18px;">
+              <label class="form-label" for="q_hours">Estimated Hours Needed <span class="req">*</span></label>
+              <select id="q_hours" name="hours" class="form-control" required>
+                <option value="">Select duration…</option>
+                <option value="4">4 Hours (minimum)</option>
+                <option value="5">5 Hours</option>
+                <option value="6">6 Hours</option>
+                <option value="7">7 Hours</option>
+                <option value="8">8 Hours</option>
+                <option value="9">9 Hours</option>
+                <option value="10">10 Hours</option>
+                <option value="custom">10+ / Custom duration</option>
+              </select>
+            </div>
+
+            <!-- Section 4: Itinerary -->
+            <div class="form-section-title">Trip Details</div>
+            <div class="form-group">
+              <label class="form-label" for="q_pickup">Pickup Location <span class="req">*</span></label>
+              <input type="text" id="q_pickup" name="pickup_location" class="form-control" placeholder="Street address or neighborhood" required>
+            </div>
+            <div class="form-group" style="margin-top:18px;">
+              <label class="form-label" for="q_destinations">Destinations / Stops</label>
+              <textarea id="q_destinations" name="destinations" class="form-control" placeholder="List any specific venues, bars, or neighborhoods you'd like to visit…" style="min-height:100px;"></textarea>
+              <div class="form-hint">Not sure yet? We can help plan your route — just leave it blank</div>
+            </div>
+            <div class="form-group" style="margin-top:18px;">
+              <label class="form-label" for="q_addons">Add-Ons You're Interested In</label>
+              <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;">
+                <label style="display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.04);border:1px solid var(--c-border);border-radius:8px;padding:8px 12px;font-size:0.82rem;cursor:pointer;transition:var(--transition);">
+                  <input type="checkbox" name="addon_decor" value="birthday_decor" style="accent-color:var(--c-gold);"> 🎂 Birthday Decor
+                </label>
+                <label style="display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.04);border:1px solid var(--c-border);border-radius:8px;padding:8px 12px;font-size:0.82rem;cursor:pointer;transition:var(--transition);">
+                  <input type="checkbox" name="addon_photo" value="photographer" style="accent-color:var(--c-gold);"> 📸 Photographer
+                </label>
+                <label style="display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.04);border:1px solid var(--c-border);border-radius:8px;padding:8px 12px;font-size:0.82rem;cursor:pointer;transition:var(--transition);">
+                  <input type="checkbox" name="addon_dj" value="live_dj" style="accent-color:var(--c-gold);"> 🎤 Live DJ
+                </label>
+                <label style="display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.04);border:1px solid var(--c-border);border-radius:8px;padding:8px 12px;font-size:0.82rem;cursor:pointer;transition:var(--transition);">
+                  <input type="checkbox" name="addon_champagne" value="champagne" style="accent-color:var(--c-gold);"> 🍾 Champagne Toast
+                </label>
+                <label style="display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.04);border:1px solid var(--c-border);border-radius:8px;padding:8px 12px;font-size:0.82rem;cursor:pointer;transition:var(--transition);">
+                  <input type="checkbox" name="addon_carpet" value="red_carpet" style="accent-color:var(--c-gold);"> 🌹 Red Carpet
+                </label>
+                <label style="display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.04);border:1px solid var(--c-border);border-radius:8px;padding:8px 12px;font-size:0.82rem;cursor:pointer;transition:var(--transition);">
+                  <input type="checkbox" name="addon_photobooth" value="photo_booth" style="accent-color:var(--c-gold);"> 📱 Photo Booth
+                </label>
+              </div>
+            </div>
+            <div class="form-group" style="margin-top:18px;">
+              <label class="form-label" for="q_notes">Additional Notes or Questions</label>
+              <textarea id="q_notes" name="notes" class="form-control" placeholder="Anything else we should know? Special requests, questions, specific vibe you're going for…" style="min-height:100px;"></textarea>
+            </div>
+
+            <!-- Submit -->
+            <div id="formAlert" class="alert" style="display:none;"></div>
+            <div class="form-submit-row">
+              <button type="submit" class="btn btn-primary">
+                Send My Quote Request →
+              </button>
+              <p style="font-size:0.75rem;color:var(--c-muted);text-align:center;margin-top:12px;">
+                ⚡ We respond within 2 hours · 🔒 Your info is never sold or shared
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="quote-sidebar anim-on-scroll anim-delay-2">
+
+        <!-- Why book with us -->
+        <div class="sidebar-card">
+          <div class="sidebar-card-title">Why PTO Mobile?</div>
+          <div class="trust-list">
+            <div class="trust-row"><span class="trust-row-icon">⭐</span><span class="trust-row-text">4.9-star rating across 500+ events</span></div>
+            <div class="trust-row"><span class="trust-row-icon">🛡️</span><span class="trust-row-text">Fully licensed &amp; insured fleet</span></div>
+            <div class="trust-row"><span class="trust-row-icon">👔</span><span class="trust-row-text">Background-checked professional drivers</span></div>
+            <div class="trust-row"><span class="trust-row-icon">💰</span><span class="trust-row-text">Transparent pricing, no hidden fees</span></div>
+            <div class="trust-row"><span class="trust-row-icon">⚡</span><span class="trust-row-text">2-hour quote response guarantee</span></div>
+            <div class="trust-row"><span class="trust-row-icon">🧹</span><span class="trust-row-text">Detailed &amp; sanitized before every event</span></div>
+            <div class="trust-row"><span class="trust-row-icon">🛣️</span><span class="trust-row-text">Free custom route planning</span></div>
+          </div>
+        </div>
+
+        <!-- Vehicle quick ref -->
+        <div class="sidebar-card">
+          <div class="sidebar-card-title">Quick Vehicle Reference</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <a href="/buses/maverick.html" style="display:flex;align-items:center;gap:12px;padding:12px;background:rgba(255,255,255,0.03);border:1px solid var(--c-border);border-radius:var(--radius);transition:var(--transition);">
+              <div style="width:40px;height:40px;background:linear-gradient(135deg,#5B21B6,#4C1D95);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">🚌</div>
+              <div style="flex:1;">
+                <div style="font-weight:600;font-size:0.88rem;">The Maverick</div>
+                <div style="font-size:0.75rem;color:var(--c-muted);">Up to 20 guests</div>
+              </div>
+              <div style="font-family:var(--ff-head);font-weight:700;font-size:0.88rem;color:var(--c-gold);">$150/hr</div>
+            </a>
+            <a href="/buses/royale.html" style="display:flex;align-items:center;gap:12px;padding:12px;background:rgba(245,158,11,0.04);border:1px solid var(--c-border-gold);border-radius:var(--radius);transition:var(--transition);">
+              <div style="width:40px;height:40px;background:linear-gradient(135deg,#92400E,#D97706);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">🎊</div>
+              <div style="flex:1;">
+                <div style="font-weight:600;font-size:0.88rem;">The Royale <span style="font-size:0.68rem;color:var(--c-gold);font-weight:700;">⭐ POPULAR</span></div>
+                <div style="font-size:0.75rem;color:var(--c-muted);">Up to 35 guests</div>
+              </div>
+              <div style="font-family:var(--ff-head);font-weight:700;font-size:0.88rem;color:var(--c-gold);">$200/hr</div>
+            </a>
+            <a href="/buses/empire.html" style="display:flex;align-items:center;gap:12px;padding:12px;background:rgba(255,255,255,0.03);border:1px solid var(--c-border);border-radius:var(--radius);transition:var(--transition);">
+              <div style="width:40px;height:40px;background:linear-gradient(135deg,#1D4ED8,#0F172A);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">👑</div>
+              <div style="flex:1;">
+                <div style="font-weight:600;font-size:0.88rem;">The Empire</div>
+                <div style="font-size:0.75rem;color:var(--c-muted);">Up to 50 guests</div>
+              </div>
+              <div style="font-family:var(--ff-head);font-weight:700;font-size:0.88rem;color:var(--c-gold);">$275/hr</div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact alt -->
+        <div class="sidebar-card" style="text-align:center;">
+          <div class="sidebar-card-title">Prefer to Call?</div>
+          <div style="font-size:1.5rem;font-family:var(--ff-head);font-weight:800;color:var(--c-gold);margin:8px 0;">
+            <a href="tel:+15551234567" style="color:var(--c-gold);">(555) 123-4567</a>
+          </div>
+          <div style="font-size:0.82rem;color:var(--c-muted);margin-bottom:16px;">Mon–Sun · 9AM – 11PM</div>
+          <a href="tel:+15551234567" class="btn btn-outline" style="width:100%;justify-content:center;border-radius:var(--radius);">📞 Call Now</a>
+        </div>
+
+        <!-- Testimonial snippet -->
+        <div class="sidebar-card">
+          <div class="t-stars">★★★★★</div>
+          <p style="font-size:0.85rem;line-height:1.7;color:var(--c-text);font-style:italic;margin:8px 0 12px;">"From the first call to the last drop-off — absolute perfection. PTO is worth every penny."</p>
+          <div class="t-author">
+            <div class="t-avatar" style="width:36px;height:36px;font-size:0.8rem;">AP</div>
+            <div><div class="t-name" style="font-size:0.82rem;">Ashley P.</div><div class="t-event">🎂 Birthday Party</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo"><div class="nav-logo-icon">🎉</div><div class="nav-logo-text"><span class="nav-logo-name">PTO Mobile</span><span class="nav-logo-sub">Experience</span></div></a>
+        <p class="footer-brand-desc">Where every mile is a party. Atlanta's premier party bus experience for birthdays, bachelorettes, prom &amp; beyond.</p>
+        <div class="social-links"><a href="#" class="social-link">📸</a><a href="#" class="social-link">👍</a><a href="#" class="social-link">🎵</a></div>
+      </div>
+      <div><h4 class="footer-heading">Our Fleet</h4><ul class="footer-links"><li><a href="/buses/">All Vehicles</a></li><li><a href="/buses/maverick.html">The Maverick (20 pax)</a></li><li><a href="/buses/royale.html">The Royale (35 pax)</a></li><li><a href="/buses/empire.html">The Empire (50 pax)</a></li></ul></div>
+      <div><h4 class="footer-heading">Company</h4><ul class="footer-links"><li><a href="/about.html">About Us</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/quote.html">Get a Quote</a></li><li><a href="/about.html#contact">Contact Us</a></li></ul></div>
+      <div><h4 class="footer-heading">Contact</h4><div class="footer-contact-row"><span class="footer-contact-icon">📞</span><a href="tel:+15551234567">(555) 123-4567</a></div><div class="footer-contact-row"><span class="footer-contact-icon">✉️</span><a href="mailto:info@ptomobileexperience.com">info@ptomobileexperience.com</a></div><div class="footer-contact-row"><span class="footer-contact-icon">📍</span><span>Atlanta, GA Metro Area</span></div><div class="footer-contact-row"><span class="footer-contact-icon">⏰</span><span>Mon–Sun · 9AM – 11PM</span></div></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 PTO Mobile Experience. All rights reserved.</p>
+      <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
+  </div>
+</footer>
+
+<div class="float-call-btn"><a href="tel:+15551234567">📞 Call Now</a></div>
+<script src="/assets/js/main.js"></script>
+<script>
+  // Pre-select bus from URL param (e.g. /quote.html?bus=royale)
+  const params = new URLSearchParams(window.location.search);
+  const busParam = params.get('bus');
+  if (busParam) {
+    const busSelect = document.getElementById('q_bus');
+    if (busSelect) {
+      const option = [...busSelect.options].find(o => o.value === busParam);
+      if (option) option.selected = true;
+    }
+  }
+</script>
+</body>
+</html>

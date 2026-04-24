@@ -1,0 +1,17 @@
+# Local environment variables — NEVER commit these
+.dev.vars
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Node (if you add a build tool later)
+node_modules/
+dist/
+.cache/
