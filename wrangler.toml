@@ -1,12 +1,15 @@
 # PTO Mobile Experience — Cloudflare Pages Configuration
-# https://developers.cloudflare.com/pages/
+# https://developers.cloudflare.com/pages/configuration/wrangler-configuration/
+#
+# IMPORTANT: This is a PAGES project, not a Workers project.
+# Deploy with:  npx wrangler pages deploy .
+# NOT with:     npx wrangler deploy  (that's for Workers only)
 
 name = "pto-mobile-experience"
 compatibility_date = "2024-09-23"
 
-# Pages project root — all HTML/CSS/JS files are served from here
-# No build command needed (pure static HTML)
-# Build output directory is the repo root
+# Tell Wrangler this is a Pages project and where the static files are
+pages_build_output_dir = "."
 
 # ── Environment Variables ────────────────────────────────────
 # Set these in Cloudflare Dashboard:
@@ -14,7 +17,6 @@ compatibility_date = "2024-09-23"
 #
 # DO NOT put real values here — use the Dashboard or .dev.vars for local dev
 [vars]
-# Placeholder — actual values set in Dashboard
 SITE_URL = "https://ptomobileexperience.com"
 
 # ── Bindings (future use) ────────────────────────────────────
