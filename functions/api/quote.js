@@ -19,7 +19,7 @@ const CORS_HEADERS = {
 };
 
 /** Required fields for a valid quote submission */
-const REQUIRED_FIELDS = ['name', 'email', 'phone', 'event_type', 'event_date', 'guests', 'hours', 'pickup_location'];
+const REQUIRED_FIELDS = ['name', 'email', 'phone', 'event_type', 'event_date', 'start_time', 'guests', 'pickup_location'];
 
 export async function onRequestPost({ request, env }) {
   try {
@@ -58,8 +58,8 @@ export async function onRequestPost({ request, env }) {
       start_time:       body.start_time || '',
       end_time:         body.end_time   || '',
       guests:           body.guests,
-      hours:            body.hours,
-      bus:              body.bus        || 'undecided',
+      package:          body.package    || '',
+      bus:              'Bus #001',
 
       // Itinerary
       pickup_location:  body.pickup_location.trim(),
@@ -68,12 +68,11 @@ export async function onRequestPost({ request, env }) {
 
       // Add-ons (checkboxes come as separate boolean-ish fields)
       addons: [
-        body.addon_decor      && 'Birthday Decor',
-        body.addon_photo      && 'Photographer',
-        body.addon_dj         && 'Live DJ',
-        body.addon_champagne  && 'Champagne Toast',
-        body.addon_carpet     && 'Red Carpet',
-        body.addon_photobooth && 'Photo Booth',
+        body.addon_bottle       && 'Bottle Package',
+        body.addon_hookah       && 'Hookah',
+        body.addon_vibe         && 'Vibe Curator',
+        body.addon_entertainment && 'Live Entertainment',
+        body.addon_theme        && 'Theme Setup',
       ].filter(Boolean),
 
       // Meta
@@ -116,7 +115,7 @@ export async function onRequestPost({ request, env }) {
     console.error('[PTO Quote] Unexpected error:', err);
     return json({
       success: false,
-      error: 'An unexpected error occurred. Please call us directly at (832) 737-0626.',
+      error: 'An unexpected error occurred. Please call us directly at (713) 744-5143.',
     }, 500);
   }
 }
