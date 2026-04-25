@@ -10,7 +10,11 @@
       "Bash(npx wrangler *)",
       "Bash(node_modules/.bin/wrangler deploy *)",
       "PowerShell(Get-Command node, npm, npx, bun 2>&1)",
-      "PowerShell($env:PATH)"
+      "PowerShell($env:PATH)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(git commit -m 'Add social media SVG icons and placeholder bus images *)"
     ],
     "additionalDirectories": [
       "c:\\Users\\sgadmin\\.claude\\projects\\c--Users-sgadmin-Project-PTO-pto-mobile-experience"
