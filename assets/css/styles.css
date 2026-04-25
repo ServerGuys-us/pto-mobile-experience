@@ -1323,6 +1323,80 @@ textarea.form-control { resize: vertical; min-height: 110px; }
 .float-call-btn a:hover { transform: scale(1.06); box-shadow: 0 6px 36px rgba(204,28,28,0.7); }
 @media (max-width: 768px) { .float-call-btn { display: block; } }
 
+/* ═══════════════════════════════════════════════════════════
+   MOBILE EXPERIENCE  (≤ 767px)
+   Desktop and mobile intentionally look different here.
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+
+  /* ── Red accent bar at top of every page ────────────────── */
+  body::before {
+    content: '';
+    display: block;
+    height: 3px;
+    background: linear-gradient(90deg, var(--c-red) 0%, #8B0000 60%, transparent 100%);
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1100;
+  }
+
+  /* ── Hero: drop the card, make copy fill the screen ─────── */
+  .hero { min-height: auto; padding-top: 90px; }
+  .hero-content { padding-block: 32px 48px; gap: 20px; }
+  .hero-visual { display: none; }
+  .hero-title { font-size: clamp(2.4rem, 12vw, 3.6rem); }
+  .hero-desc { font-size: 0.97rem; margin-bottom: 24px; }
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+
+  /* Stats: 2×2 grid instead of single row */
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 28px;
+  }
+  .hero-stat-num { font-size: 1.75rem; }
+
+  /* ── Sections: tighter on mobile ────────────────────────── */
+  .section { padding-block: 52px; }
+
+  /* ── Cards: full-width, no hover translate ───────────────── */
+  .bus-card, .pricing-card, .value-card { transform: none !important; }
+
+  /* ── Float call btn: hide in favor of action bar ─────────── */
+  .float-call-btn { display: none !important; }
+
+  /* ── Body padding for the sticky action bar ──────────────── */
+  body { padding-bottom: 76px; }
+}
+
+/* ── MOBILE BOTTOM ACTION BAR ────────────────────────────── */
+.mobile-action-bar {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 950;
+  background: rgba(10, 10, 20, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--c-border-red);
+  padding: 12px 20px;
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+  gap: 10px;
+}
+@media (max-width: 767px) {
+  .mobile-action-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.mobile-action-bar .btn {
+  justify-content: center;
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  padding: 13px 16px;
+}
+
 /* ── ALERT ──────────────────────────────────────────────── */
 .alert {
   padding: 14px 18px;

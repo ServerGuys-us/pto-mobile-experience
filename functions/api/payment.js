@@ -49,7 +49,7 @@ export async function onRequestPost({ request, env }) {
       return json({ success: false, error: 'Minimum deposit amount is $50.' }, 400);
     }
 
-    const siteUrl = env.SITE_URL || 'https://ptomobileexperience.com';
+    const siteUrl = env.SITE_URL || 'https://ptomobile.com';
 
     // ── Create Stripe Checkout Session ────────────────────────
     const params = new URLSearchParams({

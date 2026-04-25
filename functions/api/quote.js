@@ -18,8 +18,8 @@ const CORS_HEADERS = {
   'Content-Type': 'application/json',
 };
 
-/** Required fields for a valid quote submission */
-const REQUIRED_FIELDS = ['name', 'email', 'phone', 'event_type', 'event_date', 'start_time', 'guests', 'pickup_location'];
+const QUOTE_REQUIRED  = ['name', 'email', 'phone', 'event_type', 'event_date', 'start_time', 'guests', 'pickup_location'];
+const CONTACT_REQUIRED = ['name', 'email', 'event_type'];
 
 export async function onRequestPost({ request, env }) {
   try {
@@ -32,7 +32,8 @@ export async function onRequestPost({ request, env }) {
     }
 
     // ── Validate required fields ──────────────────────────────
-    const missing = REQUIRED_FIELDS.filter(f => !body[f]?.toString().trim());
+    const requiredFields = body.source === 'contact_page' ? CONTACT_REQUIRED : QUOTE_REQUIRED;
+    const missing = requiredFields.filter(f => !body[f]?.toString().trim());
     if (missing.length) {
       return json({
         success: false,
