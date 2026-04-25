@@ -111,15 +111,18 @@
               <div class="form-group">
                 <label class="form-label" for="q_name">Full Name <span class="req">*</span></label>
                 <input type="text" id="q_name" name="name" class="form-control" placeholder="Your full name" required autocomplete="name">
+                <div class="field-error" id="err_name"></div>
               </div>
               <div class="form-group">
                 <label class="form-label" for="q_phone">Phone Number <span class="req">*</span></label>
                 <input type="tel" id="q_phone" name="phone" class="form-control" placeholder="(832) 000-0000" required autocomplete="tel">
+                <div class="field-error" id="err_phone"></div>
               </div>
             </div>
             <div class="form-group" style="margin-top:18px;">
               <label class="form-label" for="q_email">Email Address <span class="req">*</span></label>
               <input type="email" id="q_email" name="email" class="form-control" placeholder="your@email.com" required autocomplete="email">
+              <div class="field-error" id="err_email"></div>
             </div>
 
             <!-- Section 2: Event Details -->
@@ -139,16 +142,19 @@
                   <option>Sporting Event</option>
                   <option>Other Celebration</option>
                 </select>
+                <div class="field-error" id="err_event_type"></div>
               </div>
               <div class="form-group">
                 <label class="form-label" for="q_date">Event Date <span class="req">*</span></label>
                 <input type="date" id="q_date" name="event_date" class="form-control" required>
+                <div class="field-error" id="err_date"></div>
               </div>
             </div>
             <div class="form-grid form-grid-2" style="margin-top:18px;">
               <div class="form-group">
                 <label class="form-label" for="q_start">Approximate Start Time <span class="req">*</span></label>
                 <input type="time" id="q_start" name="start_time" class="form-control" required>
+                <div class="field-error" id="err_start_time"></div>
               </div>
               <div class="form-group">
                 <label class="form-label" for="q_end">Approximate End Time</label>
@@ -168,6 +174,7 @@
                   <option>11–15 guests</option>
                   <option>16–20 guests</option>
                 </select>
+                <div class="field-error" id="err_guests"></div>
               </div>
               <div class="form-group">
                 <label class="form-label" for="q_package">Package Interest</label>
@@ -190,6 +197,7 @@
             <div class="form-group">
               <label class="form-label" for="q_pickup">Pickup Location <span class="req">*</span></label>
               <input type="text" id="q_pickup" name="pickup_location" class="form-control" placeholder="Street address or Houston neighborhood" required>
+              <div class="field-error" id="err_pickup_location"></div>
             </div>
             <div class="form-group" style="margin-top:18px;">
               <label class="form-label" for="q_destinations">Destinations / Stops</label>

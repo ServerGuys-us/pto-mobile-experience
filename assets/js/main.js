@@ -98,50 +98,117 @@
 
   if (!form) return;
 
+  // Block past dates in the date picker
+  const dateInput = form.querySelector('[name="event_date"]');
+  if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
+  // ── Validation rules ──────────────────────────────────────
+  const RULES = [
+    { name: 'name',            msg: 'Full name is required.' },
+    { name: 'phone',           msg: 'Phone number is required.' },
+    { name: 'email',           msg: 'A valid email address is required.',
+      test: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
+    { name: 'event_type',      msg: 'Please select your event type.' },
+    { name: 'event_date',      msg: 'Please choose a future event date.',
+      test: v => v && new Date(v + 'T00:00:00') >= new Date(new Date().toDateString()) },
+    { name: 'start_time',      msg: 'Start time is required.' },
+    { name: 'guests',          msg: 'Please select your group size.' },
+    { name: 'pickup_location', msg: 'Pickup location is required.' },
+  ];
+
+  function validateForm() {
+    clearAllErrors();
+    let firstInvalid = null;
+    RULES.forEach(({ name, msg, test }) => {
+      const field = form.querySelector(`[name="${name}"]`);
+      if (!field) return;
+      const val = field.value.trim();
+      if (!val || (test && !test(val))) {
+        markInvalid(field, msg);
+        if (!firstInvalid) firstInvalid = field;
+      }
+    });
+    return firstInvalid;
+  }
+
+  function markInvalid(field, msg) {
+    field.classList.add('invalid');
+    const errEl = document.getElementById('err_' + field.name);
+    if (errEl) { errEl.textContent = msg; errEl.classList.add('visible'); }
+  }
+
+  function clearField(field) {
+    field.classList.remove('invalid');
+    const errEl = document.getElementById('err_' + field.name);
+    if (errEl) { errEl.textContent = ''; errEl.classList.remove('visible'); }
+  }
+
+  function clearAllErrors() {
+    form.querySelectorAll('.invalid').forEach(el => el.classList.remove('invalid'));
+    form.querySelectorAll('.field-error.visible').forEach(el => {
+      el.textContent = ''; el.classList.remove('visible');
+    });
+    if (alertEl) { alertEl.style.display = 'none'; }
+  }
+
+  // Clear each field's error as the user fixes it
+  RULES.forEach(({ name }) => {
+    const field = form.querySelector(`[name="${name}"]`);
+    if (field) {
+      field.addEventListener('input',  () => clearField(field));
+      field.addEventListener('change', () => clearField(field));
+    }
+  });
+
+  // ── Submit ────────────────────────────────────────────────
   form.addEventListener('submit', async e => {
     e.preventDefault();
 
+    const firstInvalid = validateForm();
+    if (firstInvalid) {
+      firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      firstInvalid.focus();
+      return;
+    }
+
     const btn     = form.querySelector('[type="submit"]');
     const origTxt = btn.innerHTML;
-
-    btn.disabled = true;
+    btn.disabled  = true;
     btn.innerHTML = '<span class="spinner"></span> Sending…';
-    if (alertEl) { alertEl.textContent = ''; alertEl.className = 'alert'; alertEl.style.display = 'none'; }
 
     const data = Object.fromEntries(new FormData(form));
 
     try {
-      const res = await fetch('/api/quote', {
+      const res  = await fetch('/api/quote', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
-
       const json = await res.json();
 
       if (json.success) {
         form.style.display = 'none';
         if (success) success.classList.add('visible');
-        // Track conversion
         if (typeof gtag !== 'undefined') gtag('event', 'quote_submitted', { event_category: 'lead' });
       } else {
-        showAlert(json.error || 'Something went wrong. Please call us directly.');
-        btn.disabled = false;
+        showBanner(json.error || 'Something went wrong. Please call us directly.');
+        btn.disabled  = false;
         btn.innerHTML = origTxt;
       }
     } catch {
-      showAlert('Network error. Please try again or call us at (832) 737-0646.');
-      btn.disabled = false;
+      showBanner('Network error. Please try again or call us at (832) 737-0646.');
+      btn.disabled  = false;
       btn.innerHTML = origTxt;
     }
-
-    function showAlert(msg) {
-      if (!alertEl) return;
-      alertEl.textContent = msg;
-      alertEl.className = 'alert alert-error';
-      alertEl.style.display = 'block';
-    }
   });
+
+  function showBanner(msg) {
+    if (!alertEl) return;
+    alertEl.textContent   = msg;
+    alertEl.className     = 'alert alert-error';
+    alertEl.style.display = 'block';
+    alertEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
 })();
 
 /* ── CONTACT FORM SUBMISSION ────────────────────────────── */
