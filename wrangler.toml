@@ -1,26 +1,10 @@
-# PTO Mobile Experience — Cloudflare Pages Configuration
-# https://developers.cloudflare.com/pages/configuration/wrangler-configuration/
-#
-# IMPORTANT: This is a PAGES project, not a Workers project.
-# Deploy with:  npx wrangler pages deploy .
-# NOT with:     npx wrangler deploy  (that's for Workers only)
-
 name = "autumn-mouse-a96c"
-compatibility_date = "2024-09-23"
+compatibility_date = "2026-04-24"
+main = "worker.js"
 
-# Tell Wrangler this is a Pages project and where the static files are
-pages_build_output_dir = "."
+[assets]
+directory = "."
+binding = "ASSETS"
 
-# ── Environment Variables ────────────────────────────────────
-# Set these in Cloudflare Dashboard:
-#   Pages → Your Project → Settings → Environment Variables
-#
-# DO NOT put real values here — use the Dashboard or .dev.vars for local dev
 [vars]
-SITE_URL = "https://ptomobileexperience.com"
-
-# ── Bindings (future use) ────────────────────────────────────
-# Uncomment if you add KV storage for caching quotes etc.
-# [[kv_namespaces]]
-# binding = "QUOTE_CACHE"
-# id = "your-kv-namespace-id"
+SITE_URL = "https://ptomobile.com"

@@ -1,0 +1,12 @@
+node_modules/
+worker.js
+wrangler.toml
+package.json
+package-lock.json
+bun.lockb
+.dev.vars
+.dev.vars.example
+.gitignore
+.assetsignore
+functions/
+*.log
