@@ -116,7 +116,7 @@ export async function onRequestPost({ request, env }) {
     console.error('[PTO Quote] Unexpected error:', err);
     return json({
       success: false,
-      error: 'An unexpected error occurred. Please call us directly at (555) 123-4567.',
+      error: 'An unexpected error occurred. Please call us directly at (832) 737-0626.',
     }, 500);
   }
 }

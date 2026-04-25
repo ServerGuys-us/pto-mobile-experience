@@ -130,7 +130,7 @@
         btn.innerHTML = origTxt;
       }
     } catch {
-      showAlert('Network error. Please try again or call us at (555) 123-4567.');
+      showAlert('Network error. Please try again or call us at (832) 737-0626.');
       btn.disabled = false;
       btn.innerHTML = origTxt;
     }
