@@ -5,7 +5,7 @@
 # Deploy with:  npx wrangler pages deploy .
 # NOT with:     npx wrangler deploy  (that's for Workers only)
 
-name = "pto-mobile-experience"
+name = "autumn-mouse-a96c"
 compatibility_date = "2024-09-23"
 
 # Tell Wrangler this is a Pages project and where the static files are
