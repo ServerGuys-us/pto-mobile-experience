@@ -3,47 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us & Contact | PTO Mobile Experience</title>
-  <meta name="description" content="Learn about PTO Mobile Experience — Atlanta's premier party bus company. Family-owned, 7+ years of creating unforgettable celebrations. Contact us today!">
+  <title>About Us &amp; Contact | PTO Mobile Experience Houston</title>
+  <meta name="description" content="Learn about PTO Mobile Experience — Houston's premier party bus company. Family-owned, dedicated to creating unforgettable celebrations. Contact us at booking@ptomobile.com.">
+  <meta property="og:url" content="https://ptomobile.com/about.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/styles.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎉</text></svg>">
+  <link rel="icon" href="/assets/images/logo.svg" type="image/svg+xml">
 </head>
 <body>
 
 <nav class="nav" id="nav">
   <div class="container">
     <div class="nav-inner">
-      <a href="/" class="nav-logo"><div class="nav-logo-icon">🎉</div><div class="nav-logo-text"><span class="nav-logo-name">PTO Mobile</span><span class="nav-logo-sub">Experience</span></div></a>
-      <ul class="nav-links">
+      <a href="/" class="nav-logo" aria-label="PTO Mobile Experience Home">
+        <img src="/assets/images/logo.svg" height="36" alt="PTO Mobile Experience" style="height:36px;width:auto;">
+      </a>
+      <ul class="nav-links" role="navigation" aria-label="Main navigation">
         <li><a href="/">Home</a></li>
-        <li><a href="/buses/">Our Fleet</a></li>
+        <li><a href="/buses/maverick.html">Our Bus</a></li>
         <li><a href="/pricing.html">Pricing</a></li>
         <li><a href="/about.html" class="active">About</a></li>
         <li><a href="/quote.html">Get a Quote</a></li>
       </ul>
       <div class="nav-cta">
-        <a href="tel:+18327370626" class="btn btn-outline btn-sm">📞 (832) 737-0626</a>
-        <a href="/quote.html" class="btn btn-primary btn-sm">Book Now →</a>
+        <a href="tel:+17137445143" class="btn btn-outline btn-sm">(713) 744-5143</a>
+        <a href="/quote.html" class="btn btn-primary btn-sm">Book Now</a>
       </div>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle mobile menu"><span></span><span></span><span></span></button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </nav>
-<div class="nav-mobile" id="navMobile">
-  <a href="/">🏠 Home</a>
-  <a href="/buses/">🚌 Our Fleet</a>
-  <a href="/buses/maverick.html" class="sub-link">↳ The Maverick (20 guests)</a>
-  <a href="/buses/royale.html" class="sub-link">↳ The Royale (35 guests)</a>
-  <a href="/buses/empire.html" class="sub-link">↳ The Empire (50 guests)</a>
-  <a href="/pricing.html">💎 Pricing & Packages</a>
-  <a href="/about.html" class="active">ℹ️ About Us</a>
-  <a href="/quote.html">📋 Get a Quote</a>
+<div class="nav-mobile" id="navMobile" role="dialog" aria-label="Mobile navigation">
+  <a href="/">Home</a>
+  <a href="/buses/maverick.html">Our Bus</a>
+  <a href="/pricing.html">Pricing &amp; Packages</a>
+  <a href="/about.html" class="active">About Us</a>
+  <a href="/quote.html">Get a Quote</a>
   <div class="nav-mobile-cta">
-    <a href="tel:+18327370626" class="btn btn-outline">📞 Call (832) 737-0626</a>
-    <a href="/quote.html" class="btn btn-primary">Get Your Free Quote →</a>
+    <a href="tel:+17137445143" class="btn btn-outline">Call (713) 744-5143</a>
+    <a href="/quote.html" class="btn btn-primary">Get Your Free Quote</a>
   </div>
 </div>
 
@@ -52,11 +54,14 @@
   <div class="page-hero-bg"></div>
   <div class="container">
     <div class="page-hero-content">
-      <div class="breadcrumb"><a href="/">Home</a><span>/</span><span style="color:var(--c-gold)">About</span></div>
-      <div class="section-tag" style="display:inline-flex;margin-inline:auto;">🎉 Our Story</div>
-      <h1 class="h1" style="margin-top:14px;">About <span class="text-gold">PTO Mobile Experience</span></h1>
+      <div class="breadcrumb">
+        <a href="/">Home</a><span>/</span>
+        <span style="color:var(--c-red)">About</span>
+      </div>
+      <div class="section-tag" style="display:inline-flex;margin-inline:auto;">Our Story</div>
+      <h1 class="h1" style="margin-top:14px;">About <span class="text-red">PTO Mobile Experience</span></h1>
       <div class="section-divider"></div>
-      <p class="lead" style="max-width:560px;margin-inline:auto;margin-top:12px;">Family-owned and driven by passion. We've been making Atlanta's celebrations unforgettable for over 7 years.</p>
+      <p class="lead" style="max-width:560px;margin-inline:auto;margin-top:12px;">Family-owned and driven by passion. Making Houston's celebrations unforgettable — one ride at a time.</p>
     </div>
   </div>
 </section>
@@ -67,34 +72,34 @@
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;" class="anim-on-scroll">
       <div>
         <div class="section-tag" style="display:inline-flex;">Our Story</div>
-        <h2 class="h2" style="margin-top:12px;">Play Time Over —<br><span class="text-gold">Let's Celebrate</span></h2>
+        <h2 class="h2" style="margin-top:12px;">Play Time Over —<br><span class="text-red">Let's Celebrate</span></h2>
         <p style="color:var(--c-muted);line-height:1.85;margin-top:20px;">
-          PTO Mobile Experience was born from a simple belief: every celebration deserves to be extraordinary. Founded in Atlanta, Georgia, we started with a single bus and a commitment to delivering experiences that people would talk about for years.
+          PTO Mobile Experience was born from a simple belief: every celebration deserves to be extraordinary. Founded in Houston, Texas, we built this company with a commitment to delivering experiences that people will talk about for years.
         </p>
         <p style="color:var(--c-muted);line-height:1.85;margin-top:16px;">
-          "Play Time Over" isn't just our name — it's our philosophy. When you step onto one of our vehicles, the workday ends, the stress disappears, and the celebration begins. Whether it's a birthday, a bachelorette, prom night, or a corporate event, we show up ready to make it the best night of your life.
+          "Play Time Over" isn't just our name — it's our philosophy. When you step onto our vehicle, the workday ends, the stress disappears, and the celebration begins. Whether it's a birthday, a bachelorette, prom night, or a corporate event, we show up ready to make it the best night of your life.
         </p>
         <p style="color:var(--c-muted);line-height:1.85;margin-top:16px;">
-          Over 7 years and 500+ events later, we're still doing exactly that. Our fleet has grown, our team has grown, but our mission has never changed: professional service, premium vehicles, and memories that last forever.
+          Based in Houston, TX at 2910 Antoine Dr, we serve the entire greater Houston metro area with professional service, a premium vehicle, and memories that last forever.
         </p>
       </div>
       <div>
-        <div style="background:linear-gradient(135deg,var(--c-card),rgba(245,158,11,0.05));border:1px solid var(--c-border-gold);border-radius:var(--radius-xl);padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+        <div style="background:linear-gradient(135deg,var(--c-card),rgba(204,28,28,0.05));border:1px solid var(--c-border-red);border-radius:var(--radius-xl);padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:24px;">
           <div style="text-align:center;">
-            <div style="font-family:var(--ff-head);font-size:3rem;font-weight:800;color:var(--c-gold);line-height:1;">7+</div>
-            <div style="font-size:0.8rem;color:var(--c-muted);margin-top:6px;text-transform:uppercase;letter-spacing:0.06em;">Years in Business</div>
-          </div>
-          <div style="text-align:center;">
-            <div style="font-family:var(--ff-head);font-size:3rem;font-weight:800;color:var(--c-gold);line-height:1;">500+</div>
+            <div style="font-family:var(--ff-head);font-size:3rem;font-weight:800;color:var(--c-red);line-height:1;">500+</div>
             <div style="font-size:0.8rem;color:var(--c-muted);margin-top:6px;text-transform:uppercase;letter-spacing:0.06em;">Events Completed</div>
           </div>
           <div style="text-align:center;">
-            <div style="font-family:var(--ff-head);font-size:3rem;font-weight:800;color:var(--c-gold);line-height:1;">5K+</div>
+            <div style="font-family:var(--ff-head);font-size:3rem;font-weight:800;color:var(--c-red);line-height:1;">5K+</div>
             <div style="font-size:0.8rem;color:var(--c-muted);margin-top:6px;text-transform:uppercase;letter-spacing:0.06em;">Happy Guests</div>
           </div>
           <div style="text-align:center;">
-            <div style="font-family:var(--ff-head);font-size:3rem;font-weight:800;color:var(--c-gold);line-height:1;">⭐4.9</div>
+            <div style="font-family:var(--ff-head);font-size:3rem;font-weight:800;color:var(--c-red);line-height:1;">4.9</div>
             <div style="font-size:0.8rem;color:var(--c-muted);margin-top:6px;text-transform:uppercase;letter-spacing:0.06em;">Average Rating</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-family:var(--ff-head);font-size:3rem;font-weight:800;color:var(--c-red);line-height:1;">HTX</div>
+            <div style="font-size:0.8rem;color:var(--c-muted);margin-top:6px;text-transform:uppercase;letter-spacing:0.06em;">Houston, Texas</div>
           </div>
         </div>
       </div>
@@ -106,41 +111,41 @@
 <section class="section section-alt">
   <div class="container">
     <div class="section-header anim-on-scroll">
-      <div class="section-tag">💛 What We Stand For</div>
-      <h2 class="h2">Our <span class="text-gold">Values</span></h2>
+      <div class="section-tag">What We Stand For</div>
+      <h2 class="h2">Our <span class="text-red">Values</span></h2>
       <div class="section-divider"></div>
     </div>
 
     <div class="values-grid">
       <div class="value-card anim-on-scroll anim-delay-1">
-        <span class="value-icon">🏆</span>
+        <span class="value-icon" style="color:var(--c-red);">★</span>
         <div class="value-title">Excellence in Service</div>
-        <div class="value-desc">We hold ourselves to the highest standard in every interaction — from the first phone call to the final drop-off. Every detail matters.</div>
+        <div class="value-desc">We hold ourselves to the highest standard in every interaction — from the first call to the final drop-off. Every detail matters.</div>
       </div>
       <div class="value-card anim-on-scroll anim-delay-2">
-        <span class="value-icon">🛡️</span>
+        <span class="value-icon" style="color:var(--c-red);">✦</span>
         <div class="value-title">Safety First, Always</div>
-        <div class="value-desc">Our vehicles are fully insured, regularly inspected, and maintained to the highest standards. Our drivers are licensed, background-checked, and trained professionals.</div>
+        <div class="value-desc">Our vehicle is fully insured, regularly inspected, and maintained to the highest standards. Our driver is licensed, background-checked, and a trained professional.</div>
       </div>
       <div class="value-card anim-on-scroll anim-delay-3">
-        <span class="value-icon">🤝</span>
+        <span class="value-icon" style="color:var(--c-red);">◆</span>
         <div class="value-title">Genuine Hospitality</div>
         <div class="value-desc">We treat every guest like family. Our team is warm, professional, and genuinely invested in making your celebration perfect.</div>
       </div>
       <div class="value-card anim-on-scroll anim-delay-4">
-        <span class="value-icon">✨</span>
+        <span class="value-icon" style="color:var(--c-red);">◉</span>
         <div class="value-title">Memorable Experiences</div>
         <div class="value-desc">We don't just provide transportation — we create moments. Every booking is an opportunity to create a memory that lasts a lifetime.</div>
       </div>
       <div class="value-card anim-on-scroll anim-delay-1">
-        <span class="value-icon">💎</span>
+        <span class="value-icon" style="color:var(--c-red);">▲</span>
         <div class="value-title">Premium Quality</div>
-        <div class="value-desc">Our vehicles are meticulously maintained and detailed before every single booking. You'll step on a bus that looks and feels brand new every time.</div>
+        <div class="value-desc">Our vehicle is meticulously maintained and detailed before every single booking. You'll step onto a bus that looks and feels brand new every time.</div>
       </div>
       <div class="value-card anim-on-scroll anim-delay-2">
-        <span class="value-icon">🤲</span>
+        <span class="value-icon" style="color:var(--c-red);">♦</span>
         <div class="value-title">Community Commitment</div>
-        <div class="value-desc">We're proud to serve the Atlanta community. We partner with local vendors, support local events, and give back to the neighborhoods that made us.</div>
+        <div class="value-desc">We're proud to serve the Houston community. We support local events and give back to the neighborhoods that made us.</div>
       </div>
     </div>
   </div>
@@ -150,8 +155,8 @@
 <section class="section" id="contact">
   <div class="container">
     <div class="section-header anim-on-scroll">
-      <div class="section-tag">📬 Reach Out</div>
-      <h2 class="h2">Get In <span class="text-gold">Touch</span></h2>
+      <div class="section-tag">Reach Out</div>
+      <h2 class="h2">Get In <span class="text-red">Touch</span></h2>
       <div class="section-divider"></div>
       <p class="lead">Have a question? Want to check availability? We're here to help — reach out any way you prefer.</p>
     </div>
@@ -161,31 +166,39 @@
       <div>
         <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:32px;">
           <div class="contact-info-card">
-            <div class="ci-icon">📞</div>
+            <div class="ci-icon" style="background:var(--c-red-dim);">
+              <span style="color:var(--c-red);font-weight:800;">T</span>
+            </div>
             <div>
               <div class="ci-label">Phone</div>
-              <div class="ci-value"><a href="tel:+18327370626" style="color:var(--c-white);">(832) 737-0626</a></div>
+              <div class="ci-value"><a href="tel:+17137445143" style="color:var(--c-white);">(713) 744-5143</a></div>
               <div class="ci-sub">Call or text — we respond fast</div>
             </div>
           </div>
           <div class="contact-info-card">
-            <div class="ci-icon">✉️</div>
+            <div class="ci-icon" style="background:var(--c-red-dim);">
+              <span style="color:var(--c-red);font-weight:800;">@</span>
+            </div>
             <div>
               <div class="ci-label">Email</div>
-              <div class="ci-value"><a href="mailto:info@ptomobileexperience.com" style="color:var(--c-white);">info@ptomobileexperience.com</a></div>
+              <div class="ci-value"><a href="mailto:booking@ptomobile.com" style="color:var(--c-white);">booking@ptomobile.com</a></div>
               <div class="ci-sub">We respond within 2 hours</div>
             </div>
           </div>
           <div class="contact-info-card">
-            <div class="ci-icon">📍</div>
+            <div class="ci-icon" style="background:var(--c-red-dim);">
+              <span style="color:var(--c-red);font-weight:800;">A</span>
+            </div>
             <div>
-              <div class="ci-label">Service Area</div>
-              <div class="ci-value">Atlanta, GA Metro Area</div>
-              <div class="ci-sub">We travel to surrounding cities too</div>
+              <div class="ci-label">Location</div>
+              <div class="ci-value">2910 Antoine Dr, Houston, TX 77092</div>
+              <div class="ci-sub">Serving all of Greater Houston</div>
             </div>
           </div>
           <div class="contact-info-card">
-            <div class="ci-icon">⏰</div>
+            <div class="ci-icon" style="background:var(--c-red-dim);">
+              <span style="color:var(--c-red);font-weight:800;">H</span>
+            </div>
             <div>
               <div class="ci-label">Business Hours</div>
               <div class="ci-value">Mon–Sun: 9AM – 11PM</div>
@@ -195,19 +208,19 @@
         </div>
 
         <div style="background:var(--c-card);border:1px solid var(--c-border);border-radius:var(--radius-lg);padding:24px;">
-          <div style="font-family:var(--ff-head);font-size:0.8rem;font-weight:700;color:var(--c-gold);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px;">Follow Us</div>
+          <div style="font-family:var(--ff-head);font-size:0.8rem;font-weight:700;color:var(--c-red);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px;">Follow Us</div>
           <div style="display:flex;gap:12px;">
-            <a href="#" style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.04);border:1px solid var(--c-border);border-radius:var(--radius);padding:10px 14px;font-size:0.85rem;transition:var(--transition);">📸 Instagram</a>
-            <a href="#" style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.04);border:1px solid var(--c-border);border-radius:var(--radius);padding:10px 14px;font-size:0.85rem;transition:var(--transition);">👍 Facebook</a>
-            <a href="#" style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.04);border:1px solid var(--c-border);border-radius:var(--radius);padding:10px 14px;font-size:0.85rem;transition:var(--transition);">🎵 TikTok</a>
+            <a href="#" style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.04);border:1px solid var(--c-border);border-radius:var(--radius);padding:10px 14px;font-size:0.85rem;transition:var(--transition);">Instagram</a>
+            <a href="#" style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.04);border:1px solid var(--c-border);border-radius:var(--radius);padding:10px 14px;font-size:0.85rem;transition:var(--transition);">Facebook</a>
+            <a href="#" style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.04);border:1px solid var(--c-border);border-radius:var(--radius);padding:10px 14px;font-size:0.85rem;transition:var(--transition);">TikTok</a>
           </div>
         </div>
       </div>
 
       <!-- Contact form -->
       <div class="quote-form-card">
-        <h3 class="h3" style="margin-bottom:4px;">Send Us a <span class="text-gold">Message</span></h3>
-        <p style="color:var(--c-muted);font-size:0.88rem;margin-bottom:24px;">For general inquiries and questions. For booking, use our <a href="/quote.html" style="color:var(--c-gold);">quote form →</a></p>
+        <h3 class="h3" style="margin-bottom:4px;">Send Us a <span class="text-red">Message</span></h3>
+        <p style="color:var(--c-muted);font-size:0.88rem;margin-bottom:24px;">For general inquiries. To book, use our <a href="/quote.html" style="color:var(--c-red);">quote form</a></p>
 
         <form id="contactForm" novalidate>
           <div class="form-grid form-grid-2" style="gap:18px;">
@@ -222,7 +235,7 @@
           </div>
           <div class="form-group" style="margin-top:18px;">
             <label class="form-label" for="contact_phone">Phone Number</label>
-            <input type="tel" id="contact_phone" name="phone" class="form-control" placeholder="(555) 000-0000">
+            <input type="tel" id="contact_phone" name="phone" class="form-control" placeholder="(713) 000-0000">
           </div>
           <div class="form-group" style="margin-top:18px;">
             <label class="form-label" for="contact_subject">Subject <span class="req">*</span></label>
@@ -244,7 +257,7 @@
           <div id="contactAlert" class="alert" style="display:none;"></div>
 
           <div class="form-submit-row">
-            <button type="submit" class="btn btn-primary">Send Message →</button>
+            <button type="submit" class="btn btn-primary">Send Message</button>
           </div>
         </form>
       </div>
@@ -256,12 +269,12 @@
 <section class="section section-alt">
   <div class="container">
     <div class="cta-band anim-on-scroll">
-      <div class="section-tag" style="display:inline-flex;margin-inline:auto;">🎉 Let's Celebrate!</div>
-      <h2 class="h2" style="margin-top:14px;">Ready to Start<br><span class="text-gold">Planning?</span></h2>
+      <div class="section-tag" style="display:inline-flex;margin-inline:auto;">Let's Celebrate</div>
+      <h2 class="h2" style="margin-top:14px;">Ready to Start<br><span class="text-red">Planning?</span></h2>
       <p class="lead" style="margin-top:16px;max-width:480px;margin-inline:auto;">Get your free custom quote in 2 hours. No pressure, no commitment — just great service.</p>
       <div class="cta-band-actions">
-        <a href="/quote.html" class="btn btn-primary btn-lg">Get a Free Quote →</a>
-        <a href="/buses/" class="btn btn-outline btn-lg">View Our Fleet</a>
+        <a href="/quote.html" class="btn btn-primary btn-lg">Get a Free Quote</a>
+        <a href="/buses/maverick.html" class="btn btn-outline btn-lg">View Our Bus</a>
       </div>
     </div>
   </div>
@@ -271,22 +284,67 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="/" class="nav-logo"><div class="nav-logo-icon">🎉</div><div class="nav-logo-text"><span class="nav-logo-name">PTO Mobile</span><span class="nav-logo-sub">Experience</span></div></a>
-        <p class="footer-brand-desc">Where every mile is a party. Atlanta's premier party bus experience for birthdays, bachelorettes, prom &amp; beyond.</p>
-        <div class="social-links"><a href="#" class="social-link">📸</a><a href="#" class="social-link">👍</a><a href="#" class="social-link">🎵</a></div>
+        <a href="/" class="nav-logo">
+          <img src="/assets/images/logo.svg" height="32" alt="PTO Mobile Experience" style="height:32px;width:auto;">
+        </a>
+        <p class="footer-brand-desc">Where every mile is a celebration. Houston's premier party bus experience for birthdays, bachelorettes, prom &amp; beyond. Play Time Over — let's celebrate.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Instagram">IG</a>
+          <a href="#" class="social-link" aria-label="Facebook">FB</a>
+          <a href="#" class="social-link" aria-label="TikTok">TT</a>
+        </div>
       </div>
-      <div><h4 class="footer-heading">Our Fleet</h4><ul class="footer-links"><li><a href="/buses/">All Vehicles</a></li><li><a href="/buses/maverick.html">The Maverick (20 pax)</a></li><li><a href="/buses/royale.html">The Royale (35 pax)</a></li><li><a href="/buses/empire.html">The Empire (50 pax)</a></li></ul></div>
-      <div><h4 class="footer-heading">Company</h4><ul class="footer-links"><li><a href="/about.html">About Us</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/quote.html">Get a Quote</a></li><li><a href="/about.html#contact">Contact Us</a></li></ul></div>
-      <div><h4 class="footer-heading">Contact</h4><div class="footer-contact-row"><span class="footer-contact-icon">📞</span><a href="tel:+18327370626">(832) 737-0626</a></div><div class="footer-contact-row"><span class="footer-contact-icon">✉️</span><a href="mailto:info@ptomobileexperience.com">info@ptomobileexperience.com</a></div><div class="footer-contact-row"><span class="footer-contact-icon">📍</span><span>Atlanta, GA Metro Area</span></div><div class="footer-contact-row"><span class="footer-contact-icon">⏰</span><span>Mon–Sun · 9AM – 11PM</span></div></div>
+      <div>
+        <h4 class="footer-heading">Our Vehicle</h4>
+        <ul class="footer-links">
+          <li><a href="/buses/maverick.html">Bus #001 — VIP Party Bus</a></li>
+          <li><a href="/pricing.html">Pricing &amp; Packages</a></li>
+          <li><a href="/quote.html">Request a Quote</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Company</h4>
+        <ul class="footer-links">
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/pricing.html">Pricing</a></li>
+          <li><a href="/quote.html">Get a Quote</a></li>
+          <li><a href="/about.html#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Contact</h4>
+        <div class="footer-contact-row">
+          <span class="footer-contact-icon">T</span>
+          <a href="tel:+17137445143">(713) 744-5143</a>
+        </div>
+        <div class="footer-contact-row">
+          <span class="footer-contact-icon">@</span>
+          <a href="mailto:booking@ptomobile.com">booking@ptomobile.com</a>
+        </div>
+        <div class="footer-contact-row">
+          <span class="footer-contact-icon">A</span>
+          <span>2910 Antoine Dr, Houston, TX 77092</span>
+        </div>
+        <div class="footer-contact-row">
+          <span class="footer-contact-icon">H</span>
+          <span>Mon–Sun · 9AM – 11PM</span>
+        </div>
+      </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 PTO Mobile Experience. All rights reserved.</p>
-      <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+      <p>&copy; 2025 PTO Mobile Experience. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cancellation Policy</a>
+      </div>
     </div>
   </div>
 </footer>
 
-<div class="float-call-btn"><a href="tel:+18327370626">📞 Call Now</a></div>
+<div class="float-call-btn">
+  <a href="tel:+17137445143">Call Now</a>
+</div>
 <script src="/assets/js/main.js"></script>
 </body>
 </html>

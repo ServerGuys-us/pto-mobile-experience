@@ -6,7 +6,11 @@
       "mcp__claude_ai_n8n__search_nodes",
       "mcp__claude_ai_n8n__get_node_types",
       "mcp__claude_ai_n8n__validate_workflow",
-      "mcp__claude_ai_n8n__create_workflow_from_code"
+      "mcp__claude_ai_n8n__create_workflow_from_code",
+      "Bash(npx wrangler *)",
+      "Bash(node_modules/.bin/wrangler deploy *)",
+      "PowerShell(Get-Command node, npm, npx, bun 2>&1)",
+      "PowerShell($env:PATH)"
     ],
     "additionalDirectories": [
       "c:\\Users\\sgadmin\\.claude\\projects\\c--Users-sgadmin-Project-PTO-pto-mobile-experience"
