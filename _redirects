@@ -1,11 +1,7 @@
-# Cloudflare Pages — URL Redirects
-# https://developers.cloudflare.com/pages/configuration/redirects/
-
-# Clean URL aliases (optional — allows /pricing → /pricing.html)
 /contact        /about.html#contact    301
-/fleet          /buses/                301
 /book           /quote.html            301
 /booking        /quote.html            301
+/fleet          /buses/maverick.html   301
 /maverick       /buses/maverick.html   301
-/royale         /buses/royale.html     301
-/empire         /buses/empire.html     301
+/royale         /buses/maverick.html   301
+/empire         /buses/maverick.html   301

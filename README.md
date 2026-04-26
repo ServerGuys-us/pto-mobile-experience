@@ -1,8 +1,13 @@
 # PTO Mobile Experience
 
-**Play Time Over** — Atlanta's Premier Party Bus Company
+**Play Time Over** — Houston's Premier Party Bus Company
 
-Booking website hosted on Cloudflare Pages with serverless form processing via Cloudflare Pages Functions, n8n automation, HubSpot CRM, and Stripe deposits.
+Booking website hosted on Cloudflare Pages with serverless form processing, n8n automation, HubSpot CRM, and Stripe deposits.
+
+- **Live site:** <https://ptomobile.com>
+- **Phone:** (832) 737-0646
+- **Email:** <booking@ptomobile.com>
+- **Address:** 2910 Antoine Dr, Houston, TX 77092
 
 ---
 
@@ -10,26 +15,29 @@ Booking website hosted on Cloudflare Pages with serverless form processing via C
 
 ```text
 pto-mobile-experience/
-├── index.html              # Homepage (hero, fleet, services, testimonials, CTA)
-├── pricing.html            # Pricing & packages
+├── index.html              # Homepage — hero, bus showcase, services, FAQ, CTA
+├── pricing.html            # Pricing & packages (weekend + weekday + add-ons)
 ├── about.html              # About us + contact form
 ├── quote.html              # Quote request form (main lead capture)
 ├── buses/
-│   ├── index.html          # Fleet overview (all 3 vehicles)
-│   ├── maverick.html       # The Maverick — up to 20 guests
-│   ├── royale.html         # The Royale — up to 35 guests (most popular)
-│   └── empire.html         # The Empire — up to 50 guests
+│   ├── index.html          # Redirects → maverick.html
+│   ├── maverick.html       # Bus #001 detail page — up to 20 guests
+│   ├── royale.html         # Redirects → maverick.html (URL compatibility)
+│   └── empire.html         # Redirects → maverick.html (URL compatibility)
 ├── assets/
-│   ├── css/styles.css      # Full design system (mobile-first, dark luxury theme)
-│   ├── js/main.js          # Nav, scroll animations, form submission, FAQ
-│   └── images/buses/       # ← Add real bus photos here
+│   ├── css/styles.css      # Full design system (dark luxury, red + white)
+│   ├── js/main.js          # Nav, scroll animations, form validation, FAQ accordion
+│   └── images/
+│       ├── logo.svg        # PTO logo (SVG, viewBox cropped for legibility)
+│       └── bus-hero.jpg    # ← Add your bus photo here
 ├── functions/
 │   └── api/
-│       ├── quote.js        # POST /api/quote → validates form → sends to n8n
-│       └── payment.js      # POST /api/payment → creates Stripe Checkout Session
-├── wrangler.toml           # Cloudflare Pages config
+│       ├── quote.js        # POST /api/quote — validates + sends to n8n webhook
+│       └── payment.js      # POST /api/payment — creates Stripe Checkout Session
+├── worker.js               # Cloudflare Worker entry point (routes API calls)
+├── wrangler.toml           # Cloudflare Pages / Workers config
 ├── _headers                # Security & cache headers
-├── _redirects              # URL alias redirects
+├── _redirects              # Clean URL redirects
 └── .dev.vars.example       # Environment variable template
 ```
 
@@ -40,50 +48,64 @@ pto-mobile-experience/
 | Layer | Technology |
 | ----- | ---------- |
 | Hosting | Cloudflare Pages |
-| API Functions | Cloudflare Pages Functions (Workers) |
-| Automation | n8n at serverguys.us |
+| API Functions | Cloudflare Pages Functions (Workers runtime) |
+| Automation | n8n (serverguys.us) |
 | CRM | HubSpot (via n8n) |
-| Payments | Stripe (Checkout Sessions) |
+| Payments | Stripe Checkout Sessions |
 | Fonts | Google Fonts — Poppins + Inter |
 
 ---
 
 ## Fleet
 
-| Vehicle | Capacity | Rate |
-| ------- | -------- | ---- |
-| The Maverick | Up to 20 guests | $150/hr |
-| The Royale | Up to 35 guests | $200/hr |
-| The Empire | Up to 50 guests | $275/hr |
+| Vehicle | Capacity | Status |
+| ------- | -------- | ------ |
+| Bus #001 | Up to 20 guests | Active |
 
-4-hour minimum on all bookings.
+### Packages
+
+| Day | Duration | Price |
+| --- | -------- | ----- |
+| Weekend | 3 Hours | $1,000 |
+| Weekend | 4 Hours | $1,200 |
+| Weekend | 5 Hours | $1,500 |
+| Weekend | 6 Hours (Signature) | $1,800 |
+| Weekday | 2 Hours | $400 |
+| Weekday | 3 Hours | $600 |
+| Weekday | 4 Hours | $800 |
+
+### Add-Ons
+
+| Add-On | Price |
+| ------ | ----- |
+| Bottle Package | $300 |
+| Hookah | $150 |
+| Vibe Curator | $200 |
+| Live Entertainment | $300+ |
+| Theme Setup | $150 |
+| VIP Lounge | Included |
 
 ---
 
 ## Setup & Deployment
 
-### 1. Add Real Photos
+### 1. Add Your Bus Photo
 
-Replace CSS gradient placeholders with actual bus photos:
+Drop your party bus photo at:
 
-- `assets/images/buses/maverick-exterior.jpg`
-- `assets/images/buses/maverick-interior.jpg`
-- `assets/images/buses/royale-exterior.jpg`
-- `assets/images/buses/royale-interior.jpg`
-- `assets/images/buses/empire-exterior.jpg`
-- `assets/images/buses/empire-interior.jpg`
+```plaintext
+assets/images/bus-hero.jpg
+```
 
-Then update the `bus-img-bg` divs in each bus page to use `<img>` tags instead.
+This image appears in the hero card on the homepage and is referenced by all Open Graph / Twitter Card `og:image` tags. The gradient background shows automatically as a fallback when the file is missing.
 
-### 2. Update Placeholder Info
+### 2. Add Social Media Links
 
-Search for and replace these placeholders across all HTML files:
+Search for `href="#"` in all HTML files and replace with your real profiles:
 
-- `(555) 123-4567` → your real phone number
-- `info@ptomobileexperience.com` → your real email
-- `Atlanta, GA Metro Area` → your actual service area
-- `$150`, `$200`, `$275` → your actual rates
-- Social media `href="#"` links → your real social profiles
+- Instagram
+- Facebook
+- TikTok
 
 ### 3. Configure Environment Variables
 
@@ -91,72 +113,93 @@ Copy `.dev.vars.example` to `.dev.vars` for local dev:
 
 ```bash
 cp .dev.vars.example .dev.vars
-# Edit .dev.vars with your real values
 ```
 
-In Cloudflare Pages Dashboard → Settings → Environment Variables, set:
+In **Cloudflare Pages Dashboard → Settings → Environment Variables**, set:
 
-- `N8N_WEBHOOK_URL` = your n8n webhook URL at serverguys.us
-- `STRIPE_SECRET_KEY` = your Stripe secret key
-- `SITE_URL` = `https://ptomobileexperience.com`
+| Variable | Value |
+| -------- | ----- |
+| `N8N_WEBHOOK_URL` | Your n8n webhook URL at serverguys.us |
+| `STRIPE_SECRET_KEY` | Your Stripe secret key (`sk_live_...`) |
+| `SITE_URL` | `https://ptomobile.com` |
 
 ### 4. Deploy to Cloudflare Pages
 
+Connect your GitHub repo in the Cloudflare Dashboard:
+
+- **Build command:** *(none — pure static HTML)*
+- **Build output directory:** `/` (root)
+- **Root directory:** `/` (root)
+
+Or deploy via CLI:
+
 ```bash
-# Connect your GitHub repo to Cloudflare Pages
-# Or use Wrangler CLI:
 npx wrangler pages deploy . --project-name pto-mobile-experience
 ```
-
-Build settings in Cloudflare Dashboard:
-
-- Build command: *(none — pure static HTML)*
-- Build output directory: `/` (root)
-- Root directory: `/` (root)
 
 ### 5. Local Development
 
 ```bash
-# Install Wrangler
 npm install -g wrangler
-
-# Run local dev server with Pages Functions support
 npx wrangler pages dev . --port 8788
 ```
 
+The local server supports Pages Functions, so `/api/quote` and `/api/payment` work during development (use `.dev.vars` for secrets).
+
 ---
 
-## n8n Automation Setup
+## Form Validation
 
-Create a workflow in n8n at `serverguys.us` with:
+The quote form (`quote.html`) has two layers of validation.
 
-1. **Trigger**: Webhook node (copy URL → `N8N_WEBHOOK_URL`)
-2. **HubSpot**: Create/update Contact with lead data
-3. **Email (Owner)**: Send quote request notification with all details
-4. **Email (Customer)**: Send confirmation with expected response time
-5. **Google Calendar**: Create event placeholder for the booking date
+**Client-side (instant feedback):**
 
-### Payload fields sent to n8n
+- Inline red error messages appear beneath each invalid field on submit
+- Fields highlight with a red border
+- Page scrolls to and focuses the first error
+- Errors clear in real-time as the user fixes each field
+- Email format validated via regex
+- Event date blocked to future dates only (date picker `min` enforced)
+
+**Server-side (`functions/api/quote.js`):**
+
+- Quote form requires: `name`, `email`, `phone`, `event_type`, `event_date`, `start_time`, `guests`, `pickup_location`
+- Contact form (about page) requires only: `name`, `email`, `event_type` — detected via `source: 'contact_page'`
+
+---
+
+## n8n Automation
+
+Create a workflow in n8n with:
+
+1. **Trigger** — Webhook node → copy URL → set as `N8N_WEBHOOK_URL`
+2. **HubSpot** — Create/update Contact with lead data
+3. **Email (Owner)** — Quote request notification with full event details
+4. **Email (Customer)** — Booking confirmation with 2-hour response promise
+5. **Google Calendar** — Create event placeholder for the booking date
+
+### Payload sent to n8n
 
 ```json
 {
-  "name": "...",
-  "email": "...",
-  "phone": "...",
-  "event_type": "...",
-  "event_date": "YYYY-MM-DD",
-  "start_time": "HH:MM",
-  "guests": "...",
-  "hours": "4",
-  "bus": "royale",
-  "pickup_location": "...",
-  "destinations": "...",
-  "addons": ["Birthday Decor", "Photographer"],
-  "notes": "...",
-  "lead_id": "PTO-ABC123",
+  "name": "Jane Smith",
+  "email": "jane@email.com",
+  "phone": "(832) 555-0100",
+  "event_type": "Bachelorette Party",
+  "event_date": "2025-08-15",
+  "start_time": "20:00",
+  "end_time": "23:00",
+  "guests": "11-15 guests",
+  "package": "weekend_4hr",
+  "bus": "Bus #001",
+  "pickup_location": "2910 Antoine Dr, Houston TX",
+  "destinations": "Downtown Houston, Midtown",
+  "addons": ["Bottle Package", "Hookah"],
+  "notes": "Surprise party",
   "source": "website_quote_form",
   "status": "new_lead",
-  "submitted_at": "ISO timestamp"
+  "lead_id": "PTO-ABC123",
+  "submitted_at": "2025-04-25T18:00:00.000Z"
 }
 ```
 
@@ -166,18 +209,25 @@ Create a workflow in n8n at `serverguys.us` with:
 
 1. Owner approves quote → n8n calls `POST /api/payment`
 2. Cloudflare Worker creates a Stripe Checkout Session
-3. n8n emails customer the `checkout_url`
-4. Customer pays deposit → Stripe sends webhook to n8n
-5. n8n updates HubSpot → marks deal as deposit paid
+3. n8n emails the customer a secure `checkout_url`
+4. Customer pays → Stripe webhook → n8n updates HubSpot deal status
 
-### Payload to `/api/payment`
+Minimum deposit is $50. The `SITE_URL` env var sets the Stripe success/cancel redirect URLs.
 
-```json
-{
-  "amount_cents": 30000,
-  "description": "PTO Mobile Experience — The Royale (6 hrs)",
-  "customer_email": "guest@email.com",
-  "customer_name": "Guest Name",
-  "lead_id": "PTO-ABC123"
-}
-```
+---
+
+## SEO
+
+All pages include full keyword meta tags, Open Graph, Twitter Cards, canonical links, robots, and geo meta tags.
+
+The homepage additionally includes JSON-LD `LocalBusiness` structured data with the address, phone, 12-city service area, all 7 packages with prices, and opening hours — powering Google's local business panel and rich results.
+
+---
+
+## Design System
+
+- **Primary:** `#CC1C1C` red on `#07070E` near-black background
+- **Text:** `#E5E7EB` body / `#FFFFFF` headings
+- **Fonts:** Poppins (headings) + Inter (body)
+- **Mobile `≤ 767px`:** hero card hidden, stats 2×2 grid, sticky bottom action bar (Call Now | Book Now)
+- **Desktop `≥ 1024px`:** 2-column hero with floating bus card and accent badges
