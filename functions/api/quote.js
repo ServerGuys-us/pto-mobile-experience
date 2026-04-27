@@ -88,22 +88,24 @@ export async function onRequestPost({ request, env }) {
     const n8nUrl = env.N8N_WEBHOOK_URL;
 
     if (!n8nUrl) {
-      console.error('[PTO Quote] N8N_WEBHOOK_URL is not configured!');
-    } else {
-      try {
-        const n8nRes = await fetch(n8nUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-          signal: AbortSignal.timeout(8000),
-        });
-        if (!n8nRes.ok) {
-          const errText = await n8nRes.text().catch(() => '');
-          console.error(`[PTO Quote] n8n webhook failed: ${n8nRes.status} — ${errText}`);
-        }
-      } catch (fetchErr) {
-        console.error(`[PTO Quote] Fetch to n8n failed: ${fetchErr.message}`);
+      return json({ success: false, error: '[DEBUG] N8N_WEBHOOK_URL is not set in env.' }, 500);
+    }
+
+    try {
+      const n8nRes = await fetch(n8nUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        signal: AbortSignal.timeout(8000),
+      });
+      const n8nBody = await n8nRes.text().catch(() => '');
+      if (!n8nRes.ok) {
+        return json({ success: false, error: `[DEBUG] n8n ${n8nRes.status}: ${n8nBody}` }, 502);
       }
+      // Temporarily return n8n response for debugging
+      return json({ success: true, debug_n8n_status: n8nRes.status, debug_n8n_body: n8nBody });
+    } catch (fetchErr) {
+      return json({ success: false, error: `[DEBUG] fetch failed: ${fetchErr.message}` }, 502);
     }
 
     // ── Respond ───────────────────────────────────────────────
