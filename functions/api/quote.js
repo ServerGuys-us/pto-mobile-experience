@@ -88,22 +88,24 @@ export async function onRequestPost({ request, env }) {
     const n8nUrl = env.N8N_WEBHOOK_URL;
 
     if (!n8nUrl) {
-      // Log but don't block — still confirm to user. Fix env var ASAP.
-      console.error('[PTO Quote] N8N_WEBHOOK_URL is not configured!');
-    } else {
+      return json({ success: false, error: '[DEBUG] N8N_WEBHOOK_URL env var is not set.' }, 500);
+    }
+
+    let n8nStatus, n8nBody;
+    try {
       const n8nRes = await fetch(n8nUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
-        // 8-second timeout so we don't hold the response open
         signal: AbortSignal.timeout(8000),
       });
-
+      n8nStatus = n8nRes.status;
+      n8nBody = await n8nRes.text().catch(() => '');
       if (!n8nRes.ok) {
-        const errText = await n8nRes.text().catch(() => '');
-        console.error(`[PTO Quote] n8n webhook failed: ${n8nRes.status} — ${errText}`);
-        // Still return success to user (we'll see the error in logs)
+        return json({ success: false, error: `[DEBUG] n8n returned ${n8nStatus}: ${n8nBody}` }, 502);
       }
+    } catch (fetchErr) {
+      return json({ success: false, error: `[DEBUG] Fetch to n8n failed: ${fetchErr.message}` }, 502);
     }
 
     // ── Respond ───────────────────────────────────────────────
