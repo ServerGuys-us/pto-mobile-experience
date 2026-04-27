@@ -8,3 +8,4 @@ binding = "ASSETS"
 
 [vars]
 SITE_URL = "https://ptomobile.com"
+N8N_WEBHOOK_URL = "https://n8n.serverguys.us/webhook/pto-quote-request"
