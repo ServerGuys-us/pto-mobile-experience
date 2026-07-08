@@ -91,19 +91,39 @@
     <div class="bus-detail-grid">
       <!-- Left: gallery + details -->
       <div>
-        <!-- Gallery — replace img src with real photos when ready -->
-        <div class="bus-gallery anim-on-scroll">
-          <div class="bus-gallery-item">
-            <img src="https://placehold.co/800x600/0A0A0A/CC1C1C?text=Bus+%23001+·+Exterior" alt="Bus #001 exterior" style="width:100%;height:100%;object-fit:cover;">
+        <!-- Photo Gallery -->
+        <div class="bus-gallery anim-on-scroll" id="busGallery">
+          <div class="bus-gallery-item" style="cursor:pointer;" onclick="openLightbox(0)">
+            <img src="/assets/images/bus-hero.jpg" alt="Bus #001 — VIP lounge interior with white quilted leather seating" style="width:100%;height:100%;object-fit:cover;">
           </div>
-          <div class="bus-gallery-item">
-            <img src="https://placehold.co/400x300/141421/CC1C1C?text=Interior+·+LED+Lighting" alt="Bus #001 interior LED lighting" style="width:100%;height:100%;object-fit:cover;">
+          <div class="bus-gallery-item" style="cursor:pointer;" onclick="openLightbox(1)">
+            <img src="/assets/images/bus-interior-seating.jpg" alt="Bus #001 — premium leather seating" style="width:100%;height:100%;object-fit:cover;">
           </div>
-          <div class="bus-gallery-item">
-            <img src="https://placehold.co/400x300/0E0E1A/CC1C1C?text=VIP+Lounge+Seating" alt="Bus #001 VIP lounge seating" style="width:100%;height:100%;object-fit:cover;">
+          <div class="bus-gallery-item" style="cursor:pointer;" onclick="openLightbox(2)">
+            <img src="/assets/images/bus-interior-lights.jpg" alt="Bus #001 — laser light show" style="width:100%;height:100%;object-fit:cover;">
           </div>
         </div>
-        <p style="font-size:0.75rem;color:var(--c-muted);margin-top:8px;text-align:center;">Replace placeholder images with real Bus #001 photos</p>
+        <!-- 4th photo as a wide full-bleed strip below gallery -->
+        <div style="margin-top:8px;border-radius:var(--radius);overflow:hidden;cursor:pointer;aspect-ratio:16/5;" onclick="openLightbox(3)">
+          <img src="/assets/images/bus-interior-dancefloor.jpg" alt="Bus #001 — dance floor with colorful LED atmosphere" style="width:100%;height:100%;object-fit:cover;object-position:center 35%;">
+        </div>
+
+        <!-- Lightbox -->
+        <div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;padding:20px;" onclick="closeLightbox()">
+          <button onclick="event.stopPropagation();shiftLightbox(-1)" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:1.6rem;width:48px;height:48px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;">&#8249;</button>
+          <img id="lightboxImg" src="" alt="" style="max-width:100%;max-height:90vh;border-radius:8px;object-fit:contain;">
+          <button onclick="event.stopPropagation();shiftLightbox(1)" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:1.6rem;width:48px;height:48px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;">&#8250;</button>
+          <button onclick="closeLightbox()" style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:1.2rem;width:40px;height:40px;border-radius:50%;cursor:pointer;">✕</button>
+        </div>
+        <script>
+          const _photos=['/assets/images/bus-hero.jpg','/assets/images/bus-interior-seating.jpg','/assets/images/bus-interior-lights.jpg','/assets/images/bus-interior-dancefloor.jpg'];
+          const _alts=['VIP lounge interior','Premium leather seating','Laser light show','Dance floor atmosphere'];
+          let _idx=0;
+          function openLightbox(i){_idx=i;document.getElementById('lightboxImg').src=_photos[i];document.getElementById('lightboxImg').alt=_alts[i];document.getElementById('lightbox').style.display='flex';}
+          function closeLightbox(){document.getElementById('lightbox').style.display='none';}
+          function shiftLightbox(d){openLightbox((_idx+d+_photos.length)%_photos.length);}
+          document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();if(e.key==='ArrowLeft')shiftLightbox(-1);if(e.key==='ArrowRight')shiftLightbox(1);});
+        </script>
 
         <!-- Specs -->
         <div style="margin-top:40px;" class="anim-on-scroll">
