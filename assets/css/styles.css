@@ -673,11 +673,11 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.7rem;
+  color: var(--c-red);
   margin: 0 auto 14px;
   transition: var(--transition);
 }
-.service-card:hover .service-icon { background: var(--c-red); transform: scale(1.1) rotate(-5deg); }
+.service-card:hover .service-icon { background: var(--c-red); color: #fff; transform: scale(1.1) rotate(-5deg); }
 .service-title { font-family: var(--ff-head); font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
 .service-desc { font-size: 0.82rem; color: var(--c-muted); line-height: 1.6; }
 
@@ -873,7 +873,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
+  color: var(--c-red);
   flex-shrink: 0;
 }
 .addon-name { font-family: var(--ff-head); font-weight: 600; font-size: 0.9rem; margin-bottom: 2px; }
@@ -1202,9 +1202,14 @@ textarea.form-control { resize: vertical; min-height: 110px; }
 }
 .value-card:hover { border-color: var(--c-border-red); transform: translateY(-3px); }
 .value-icon {
-  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px; height: 52px;
+  background: var(--c-red-dim);
+  border-radius: 14px;
+  color: var(--c-red);
   margin-bottom: 14px;
-  display: block;
 }
 .value-title { font-family: var(--ff-head); font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
 .value-desc { font-size: 0.85rem; color: var(--c-muted); line-height: 1.65; }
@@ -1226,7 +1231,7 @@ textarea.form-control { resize: vertical; min-height: 110px; }
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
+  color: var(--c-red);
   flex-shrink: 0;
 }
 .ci-label { font-size: 0.72rem; font-weight: 600; color: var(--c-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
@@ -1288,7 +1293,7 @@ textarea.form-control { resize: vertical; min-height: 110px; }
   display: inline-flex;
   align-items: center;
 }
-.footer-contact-icon { color: var(--c-red); flex-shrink: 0; margin-top: 10px; font-size: 0.875rem; }
+.footer-contact-icon { color: var(--c-red); flex-shrink: 0; margin-top: 2px; display: flex; }
 .social-links { display: flex; gap: 10px; margin-top: 18px; }
 .social-link {
   width: 36px; height: 36px;
