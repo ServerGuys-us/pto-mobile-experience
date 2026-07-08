@@ -5,6 +5,11 @@ export default {
   async fetch(request, env) {
     const { pathname } = new URL(request.url);
 
+    if (pathname === '/bus-day-pass' || pathname === '/bus-day-pass.html' ||
+        pathname === '/bus-day-pass-confirmed' || pathname === '/bus-day-pass-confirmed.html') {
+      return Response.redirect(new URL('/', request.url).href, 301);
+    }
+
     if (pathname === '/api/quote') {
       if (request.method === 'OPTIONS') return quoteApi.onRequestOptions();
       if (request.method === 'POST') return quoteApi.onRequestPost({ request, env });
