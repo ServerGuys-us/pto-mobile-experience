@@ -15,3 +15,5 @@ bun.lockb
 functions/
 *.log
 README.md
+.github/
+CONTRIBUTING.md

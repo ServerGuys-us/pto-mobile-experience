@@ -92,18 +92,18 @@
         <!-- Photo Gallery -->
         <div class="bus-gallery anim-on-scroll" id="busGallery">
           <div class="bus-gallery-item" style="cursor:pointer;" onclick="openLightbox(0)">
-            <img src="/assets/images/bus-hero.jpg" alt="Bus #001 — VIP lounge interior with white quilted leather seating" style="width:100%;height:100%;object-fit:cover;">
+            <img src="/assets/images/bus-hero.jpg" alt="Bus #001 — VIP lounge interior with white quilted leather seating" style="width:100%;height:100%;object-fit:cover;object-position:center 80%;">
           </div>
           <div class="bus-gallery-item" style="cursor:pointer;" onclick="openLightbox(1)">
-            <img src="/assets/images/bus-interior-seating.jpg" alt="Bus #001 — premium leather seating" style="width:100%;height:100%;object-fit:cover;">
+            <img src="/assets/images/bus-interior-lounge.jpg" alt="Bus #001 — premium leather lounge seating" style="width:100%;height:100%;object-fit:cover;object-position:center 80%;">
           </div>
           <div class="bus-gallery-item" style="cursor:pointer;" onclick="openLightbox(2)">
-            <img src="/assets/images/bus-interior-lights.jpg" alt="Bus #001 — laser light show" style="width:100%;height:100%;object-fit:cover;">
+            <img src="/assets/images/bus-interior-lights.jpg" alt="Bus #001 — laser light show" style="width:100%;height:100%;object-fit:cover;object-position:center 60%;">
           </div>
         </div>
         <!-- 4th photo as a wide full-bleed strip below gallery -->
         <div style="margin-top:8px;border-radius:var(--radius);overflow:hidden;cursor:pointer;aspect-ratio:16/5;" onclick="openLightbox(3)">
-          <img src="/assets/images/bus-interior-dancefloor.jpg" alt="Bus #001 — dance floor with colorful LED atmosphere" style="width:100%;height:100%;object-fit:cover;object-position:center 35%;">
+          <img src="/assets/images/bus-interior-dancefloor.jpg" alt="Bus #001 — dance floor with colorful LED atmosphere" style="width:100%;height:100%;object-fit:cover;object-position:center 50%;">
         </div>
 
         <!-- Lightbox -->
@@ -114,8 +114,8 @@
           <button onclick="closeLightbox()" style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:1.2rem;width:40px;height:40px;border-radius:50%;cursor:pointer;">✕</button>
         </div>
         <script>
-          const _photos=['/assets/images/bus-hero.jpg','/assets/images/bus-interior-seating.jpg','/assets/images/bus-interior-lights.jpg','/assets/images/bus-interior-dancefloor.jpg'];
-          const _alts=['VIP lounge interior','Premium leather seating','Laser light show','Dance floor atmosphere'];
+          const _photos=['/assets/images/bus-hero.jpg','/assets/images/bus-interior-lounge.jpg','/assets/images/bus-interior-lights.jpg','/assets/images/bus-interior-dancefloor.jpg'];
+          const _alts=['VIP lounge interior','Premium leather lounge seating','Laser light show','Dance floor atmosphere'];
           let _idx=0;
           function openLightbox(i){_idx=i;document.getElementById('lightboxImg').src=_photos[i];document.getElementById('lightboxImg').alt=_alts[i];document.getElementById('lightbox').style.display='flex';}
           function closeLightbox(){document.getElementById('lightbox').style.display='none';}
@@ -127,14 +127,14 @@
         <div style="margin-top:40px;" class="anim-on-scroll">
           <h3 class="h3" style="margin-bottom:20px;">Vehicle <span class="text-red">Specs</span></h3>
           <div class="bus-specs-grid">
-            <div class="spec-tile"><div class="spec-tile-icon">—</div><div class="spec-tile-val">20</div><div class="spec-tile-lbl">Max Guests</div></div>
-            <div class="spec-tile"><div class="spec-tile-icon">—</div><div class="spec-tile-val">HD</div><div class="spec-tile-lbl">Flat Screens</div></div>
-            <div class="spec-tile"><div class="spec-tile-icon">—</div><div class="spec-tile-val">PRO</div><div class="spec-tile-lbl">Sound System</div></div>
-            <div class="spec-tile"><div class="spec-tile-icon">—</div><div class="spec-tile-val">VIP</div><div class="spec-tile-lbl">Lounge</div></div>
-            <div class="spec-tile"><div class="spec-tile-icon">—</div><div class="spec-tile-val">LED</div><div class="spec-tile-lbl">Lighting</div></div>
-            <div class="spec-tile"><div class="spec-tile-icon">—</div><div class="spec-tile-val">A/C</div><div class="spec-tile-lbl">Climate Control</div></div>
-            <div class="spec-tile"><div class="spec-tile-icon">—</div><div class="spec-tile-val">BAR</div><div class="spec-tile-lbl">Bar Setup</div></div>
-            <div class="spec-tile"><div class="spec-tile-icon">—</div><div class="spec-tile-val">HTX</div><div class="spec-tile-lbl">Houston Based</div></div>
+            <div class="spec-tile"><div class="spec-tile-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="spec-tile-val">20</div><div class="spec-tile-lbl">Max Guests</div></div>
+            <div class="spec-tile"><div class="spec-tile-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="15" x="2" y="3" rx="2"/><polyline points="8 21 12 17 16 21"/></svg></div><div class="spec-tile-val">HD</div><div class="spec-tile-lbl">Flat Screens</div></div>
+            <div class="spec-tile"><div class="spec-tile-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div><div class="spec-tile-val">PRO</div><div class="spec-tile-lbl">Sound System</div></div>
+            <div class="spec-tile"><div class="spec-tile-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"/><path d="M2 11v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H6v-2a2 2 0 0 0-4 0Z"/><path d="M4 18v2"/><path d="M20 18v2"/><path d="M12 4v9"/></svg></div><div class="spec-tile-val">VIP</div><div class="spec-tile-lbl">Lounge</div></div>
+            <div class="spec-tile"><div class="spec-tile-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></div><div class="spec-tile-val">LED</div><div class="spec-tile-lbl">Lighting</div></div>
+            <div class="spec-tile"><div class="spec-tile-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 0 1 1.8 4.3H5"/><path d="M9.6 4.6A2 2 0 0 1 11 8H3"/><path d="M12.6 19.4A2 2 0 0 0 14 16H4"/></svg></div><div class="spec-tile-val">A/C</div><div class="spec-tile-lbl">Climate Control</div></div>
+            <div class="spec-tile"><div class="spec-tile-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22h8"/><path d="M12 11v11"/><path d="M5 2h14l-2 7a5 5 0 0 1-10 0Z"/></svg></div><div class="spec-tile-val">BAR</div><div class="spec-tile-lbl">Bar Setup</div></div>
+            <div class="spec-tile"><div class="spec-tile-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="spec-tile-val">HTX</div><div class="spec-tile-lbl">Houston Based</div></div>
           </div>
         </div>
 
